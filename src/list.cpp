@@ -12,7 +12,7 @@ void List::print_menu() {
 	cin >> choice;
 
 	if( choice == 4 ) {
-		exit(0);
+		return;
 	} else if(choice == 2) {
 		add_item();
 	} else if (choice == 3) {
@@ -46,14 +46,14 @@ void List::add_item() {
 
 void List::delete_item() {
 	cout << "*** Delete Item ***";
-	cout << "Select an item index number to delete: ";	
+	cout << "Select an item index number to delete\n";	
 	if(list.size()) {
 		for (int i=0; i< (int)list.size(); i++) {
 			cout << i << ": " << list[i] << "\n";
 		}
         int choiceNum;
         cin >> choiceNum;
-        list.erase(list.begin+choiceNum);
+        list.erase(list.begin()+choiceNum);
 	}
 	else {
 		cout << "NO items to delete. \n";
